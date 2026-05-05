@@ -78,6 +78,19 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
             </StackPanel>
+            
+            <StackPanel Style="{StaticResource FilterRow}">
+                <Label Content="Исполнитель:" Style="{StaticResource FilterLabel}" />
+                <ComboBox ItemsSource="{Binding AdventurerOptions}"
+                          SelectedItem="{Binding SelectedAdventurerOption}"
+                          Style="{StaticResource FilterComboBox}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Value.Name, TargetNullValue='Все', FallbackValue='Все'}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
         </StackPanel>
         
         <StackPanel Grid.Row="2" Orientation="Horizontal" Style="{StaticResource Toolbar}">
@@ -95,6 +108,13 @@
                 <DataGridTextColumn Header="Название" Binding="{Binding Title}" Width="*" />
                 <DataGridTextColumn Header="Награда" Binding="{Binding Reward}" Width="100" />
                 <DataGridTextColumn Header="Статус" Binding="{Binding Status, Converter={StaticResource EnumDescriptionConverter}}" Width="120" />
+                <DataGridTextColumn Header="Исполнитель" Width="150">
+                    <DataGridTextColumn.Binding>
+                        <Binding Path="Adventurer.Name" 
+                                 TargetNullValue="Не назначен" 
+                                 FallbackValue="Не назначен" />
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

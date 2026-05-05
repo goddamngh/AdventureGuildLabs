@@ -57,6 +57,23 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
+        
+        <Label Content="Исполнитель" Style="{StaticResource FieldLabel}" />
+        <ComboBox ItemsSource="{Binding AdventurerOptions}"
+                  SelectedItem="{Binding SelectedAdventurerOption}"
+                  Style="{StaticResource FormComboBox}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <Binding Path="Value.Name" 
+                                     TargetNullValue="Не назначен" 
+                                     FallbackValue="Не назначен" />
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
 
         <StackPanel Style="{StaticResource FormButtons}">
             <Button Content="Сохранить" Command="{Binding SaveCommand}" Style="{StaticResource FormButton}" />
