@@ -20,7 +20,6 @@ public class GuildContext : DbContext
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // TODO: настроить сущности (ключи, ограничения, типы столбцов)
 
         modelBuilder.Entity<Adventurer>(entity =>
         {
@@ -71,9 +70,13 @@ public class GuildContext : DbContext
                 .HasColumnType("TEXT")
                 .IsRequired()
                 .HasPrecision(18, 2);
+            
+            entity.HasOne(q => q.Adventurer)
+                .WithMany(a => a.Quests)
+                .HasForeignKey(q => q.AdventurerId) 
+                .OnDelete(DeleteBehavior.SetNull); 
         });
-
-        // TODO: добавить seed-данные
+        
 
         modelBuilder.Entity<Adventurer>().HasData(GuildSeed.Adventurers);
         modelBuilder.Entity<Quest>().HasData(GuildSeed.Quests);
