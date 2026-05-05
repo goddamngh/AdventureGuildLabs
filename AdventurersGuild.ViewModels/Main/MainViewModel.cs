@@ -44,7 +44,7 @@ public class MainViewModel : ViewModelBase
 
     public async Task OpenQuestEdit(Quest? quest)
     {
-        var editVm = new QuestEditViewModel(_questRepository, quest);
+        var editVm = new QuestEditViewModel(_questRepository, _adventurerRepository, quest);
 
         // Переключаем CurrentView на форму редактирования.
         // ContentControl в MainWindow автоматически подберёт нужный View через DataTemplate.

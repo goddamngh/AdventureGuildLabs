@@ -7,10 +7,9 @@ namespace AdventurersGuild.ViewModels.Quests;
 public class QuestEditViewModel : ViewModelBase
 {
     private readonly IQuestRepository _repository;
+    private readonly IAdventurerRepository _adventurerRepository;
     private readonly Quest? _quest;
     private readonly Completion _completion = new();
-
-    // TODO: добавить свойства формы (Title, Description, Reward, Status)
     
     private string _title =  string.Empty;
     public string Title
@@ -40,6 +39,14 @@ public class QuestEditViewModel : ViewModelBase
         set => Set(ref _status, value);
     }
     
+    private FilterOption<Adventurer?> _selectedAdventurerOption;
+    public FilterOption<Adventurer?> SelectedAdventurerOption
+    {
+        get => _selectedAdventurerOption;
+        set => Set(ref _selectedAdventurerOption, value);
+    }
+    
+    public IEnumerable<FilterOption<Adventurer?>> AdventurerOptions { get; private set; }
 
     public IEnumerable<QuestStatus> Statuses { get; } = Enum.GetValues<QuestStatus>();
 
@@ -53,10 +60,13 @@ public class QuestEditViewModel : ViewModelBase
     // Когда форма завершает работу (Save или Cancel), Complete() разблокирует ожидающего.
     public Task WhenCompleted => _completion.Task;
 
-    public QuestEditViewModel(IQuestRepository repository, Quest? quest)
+    public QuestEditViewModel(IQuestRepository repository, IAdventurerRepository adventurerRepository, Quest? quest)
     {
         _repository = repository;
+        _adventurerRepository = adventurerRepository;
         _quest = quest;
+        
+        LoadAdventurerOptions();
 
         if (_quest is not null)
         {
@@ -67,9 +77,33 @@ public class QuestEditViewModel : ViewModelBase
         CancelCommand = new RelayCommand(Cancel);
     }
 
+    private void LoadAdventurerOptions()
+    {
+        var adventurers = _adventurerRepository.Get(new AdventurerFilter());
+        
+        var options = new List<FilterOption<Adventurer?>>
+        {
+            new FilterOption<Adventurer?>(null)
+        };
+        
+        options.AddRange(adventurers.Select(a => new FilterOption<Adventurer?>(a)));
+        
+        AdventurerOptions = options;
+        
+        // Устанавливаем выбранный пункт
+        if (_quest?.AdventurerId.HasValue == true)
+        {
+            var selectedAdventurer = adventurers.FirstOrDefault(a => a.Id == _quest.AdventurerId);
+            SelectedAdventurerOption = options.FirstOrDefault(o => o.Value?.Id == selectedAdventurer?.Id);
+        }
+        else
+        {
+            SelectedAdventurerOption = options.First();  // "Не назначен"
+        }
+    }
+    
     private void CopyFrom(Quest quest)
     {
-        // TODO: скопировать данные из модели в свойства формы
         Title = quest.Title;
         Description = quest.Description;
         Reward = quest.Reward;
@@ -78,22 +112,20 @@ public class QuestEditViewModel : ViewModelBase
 
     private void CopyTo(Quest quest)
     {
-        // TODO: скопировать данные из свойств формы в модель
         quest.Title = Title;
         quest.Description = Description;
         quest.Reward = Reward;
         quest.Status = Status;
+        quest.AdventurerId = SelectedAdventurerOption?.Value?.Id;
     }
 
     private bool Validate()
     {
-        // TODO: проверить корректность введённых данных
         return !string.IsNullOrWhiteSpace(Title) && Reward >= 0;
     }
 
     private void Save()
     {
-        // TODO: создать или обновить запись через репозиторий
         if (_quest is not null)
         {
             CopyTo(_quest);
