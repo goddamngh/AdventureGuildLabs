@@ -1,0 +1,30 @@
+# Rider / Visual Studio
+.idea/
+.vs/
+*.user
+*.suo
+
+# Build results
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+
+# Compiled files
+*.dll
+*.exe
+*.pdb
+
+# Database files
+*.db
+*.sqlite
+
+# Cache files
+*.cache
+*.tmp
+
+# Rider specific
+_ReSharper.Caches/
+*.DotSettings.user
