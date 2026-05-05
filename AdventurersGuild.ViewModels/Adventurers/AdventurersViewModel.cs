@@ -34,7 +34,7 @@ public class AdventurersViewModel : ViewModelBase
         {
             if (Set(ref _searchText, value))
             {
-                Load(); // При изменении текста поиска обновляем список
+                Load();
             }
         }
     }
@@ -52,7 +52,7 @@ public class AdventurersViewModel : ViewModelBase
         {
             if (Set(ref _selectedRankOption, value))
             {
-                Load(); // При изменении ранга обновляем список
+                Load();
             }
         }
     }
