@@ -34,7 +34,7 @@ public class AdventurersViewModel : ViewModelBase
         {
             if (Set(ref _searchText, value))
             {
-                Load(); // При изменении текста поиска обновляем список
+                Load(); 
             }
         }
     }
@@ -52,7 +52,7 @@ public class AdventurersViewModel : ViewModelBase
         {
             if (Set(ref _selectedRankOption, value))
             {
-                Load(); // При изменении ранга обновляем список
+                Load();
             }
         }
     }
@@ -100,7 +100,7 @@ public class AdventurersViewModel : ViewModelBase
         };
         
         var adventurers = _repository.Get(filter);
-        Adventurers = new ObservableCollection<Adventurer>(_adventurers);
+        Adventurers = new ObservableCollection<Adventurer>(adventurers);
     }
 
     private async Task Add()
