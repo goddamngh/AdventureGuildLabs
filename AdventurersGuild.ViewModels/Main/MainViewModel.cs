@@ -33,7 +33,7 @@ public class MainViewModel : ViewModelBase
         _questRepository = questRepository;
         _adventurerRepository = adventurerRepository;
 
-        _questsViewModel = new QuestsViewModel(_questRepository, this);
+        _questsViewModel = new QuestsViewModel(_questRepository, _adventurerRepository, this);
         _adventurersViewModel = new AdventurersViewModel(_adventurerRepository, this);
 
         ShowQuestsCommand = new RelayCommand(ShowQuests);

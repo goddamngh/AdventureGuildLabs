@@ -10,6 +10,7 @@ namespace AdventurersGuild.ViewModels.Quests;
 public class QuestsViewModel : ViewModelBase
 {
     private readonly IQuestRepository _repository;
+    private readonly IAdventurerRepository _adventurerRepository;
     private readonly MainViewModel _main;
 
     private ObservableCollection<Quest> _quests = [];
@@ -40,9 +41,25 @@ public class QuestsViewModel : ViewModelBase
         }
     }
     
-    private QuestStatus? _selectedStatus;
+    private FilterOption<Adventurer?>[] _adventurerOptions = [];
+    public IEnumerable<FilterOption<Adventurer?>> AdventurerOptions => _adventurerOptions;
+
+    private FilterOption<Adventurer?> _selectedAdventurerOption;
+    public FilterOption<Adventurer?> SelectedAdventurerOption
+    {
+        get => _selectedAdventurerOption;
+        set
+        {
+            if (Set(ref _selectedAdventurerOption, value))
+            {
+                Load();
+            }
+        }
+    }
+    
     
     private readonly FilterOption<QuestStatus?>[] _statusOptions;
+    private FilterOption<QuestStatus?> _selectedStatusOption;
     public FilterOption<QuestStatus?> SelectedStatusOption
     {
         get => _selectedStatusOption;
@@ -55,17 +72,17 @@ public class QuestsViewModel : ViewModelBase
         }
     }
     
-    private FilterOption<QuestStatus?> _selectedStatusOption;
     
 
-    public IEnumerable<FilterOption<QuestStatus?>> StatusOptions => _statusOptions; // пункты выбора статуса
+    public IEnumerable<FilterOption<QuestStatus?>> StatusOptions => _statusOptions; 
     public RelayCommand AddCommand { get; }
     public RelayCommand EditCommand { get; }
     public RelayCommand DeleteCommand { get; }
 
-    public QuestsViewModel(IQuestRepository repository, MainViewModel main)
+    public QuestsViewModel(IQuestRepository repository, IAdventurerRepository adventurerRepository, MainViewModel main)
     {
         _repository = repository;
+        _adventurerRepository = adventurerRepository;
         _main = main;
 
         _statusOptions = new[]
@@ -78,11 +95,28 @@ public class QuestsViewModel : ViewModelBase
         };
         _selectedStatusOption = _statusOptions[0];
         
+        LoadAdventurerOptions(); 
+        
         AddCommand = new RelayCommand(Add);
         EditCommand = new RelayCommand(Edit, () => SelectedQuest is not null);
         DeleteCommand = new RelayCommand(Delete, () => SelectedQuest is not null);
 
         Load();
+    }
+    
+    private void LoadAdventurerOptions()
+    {
+        var adventurers = _adventurerRepository.Get(new AdventurerFilter());
+        
+        var options = new List<FilterOption<Adventurer?>>
+        {
+            new FilterOption<Adventurer?>(null) 
+        };
+        
+        options.AddRange(adventurers.Select(a => new FilterOption<Adventurer?>(a)));
+        
+        _adventurerOptions = options.ToArray();
+        _selectedAdventurerOption = _adventurerOptions[0];
     }
 
     public void Load()
@@ -90,7 +124,8 @@ public class QuestsViewModel : ViewModelBase
         var filter = new QuestFilter
         {
             SearchText = SearchText,
-            Status = SelectedStatusOption?.Value
+            Status = SelectedStatusOption?.Value,
+            AdventurerId = SelectedAdventurerOption?.Value?.Id
         };
         
         var quests = _repository.Get(filter);
@@ -114,7 +149,7 @@ public class QuestsViewModel : ViewModelBase
         if (SelectedQuest is not null)
         {
             _repository.Delete(SelectedQuest.Id);
-            Load();  // Обновляем список после удаления
+            Load(); 
         }
     }
 }

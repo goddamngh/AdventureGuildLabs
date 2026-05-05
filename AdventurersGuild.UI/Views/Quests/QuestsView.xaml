@@ -83,10 +83,14 @@
                 <Label Content="Исполнитель:" Style="{StaticResource FilterLabel}" />
                 <ComboBox ItemsSource="{Binding AdventurerOptions}"
                           SelectedItem="{Binding SelectedAdventurerOption}"
-                          Style="{StaticResource FilterComboBox}">
+                          Width="150">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Value.Name, TargetNullValue='Все', FallbackValue='Все'}" />
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <Binding Path="Value.Name" TargetNullValue="Все" FallbackValue="Все" />
+                                </TextBlock.Text>
+                            </TextBlock>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
