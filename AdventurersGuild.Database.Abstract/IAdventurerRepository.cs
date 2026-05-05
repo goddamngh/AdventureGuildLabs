@@ -4,7 +4,7 @@ namespace AdventurersGuild.Database.Abstract;
 
 public interface IAdventurerRepository
 {
-    Adventurer[] GetAll();
+    Adventurer[] Get(AdventurerFilter filter);
     Adventurer? GetById(int id);
     void Add(Adventurer adventurer);
     void Update(Adventurer adventurer);

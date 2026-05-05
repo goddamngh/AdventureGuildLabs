@@ -4,7 +4,7 @@ namespace AdventurersGuild.Database.Abstract;
 
 public interface IQuestRepository
 {
-    Quest[] GetAll();
+    Quest[] Get(QuestFilter filter);
     Quest? GetById(int id);
     void Add(Quest quest);
     void Update(Quest quest);
