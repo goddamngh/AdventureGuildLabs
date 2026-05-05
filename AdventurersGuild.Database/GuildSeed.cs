@@ -12,7 +12,8 @@ internal static class GuildSeed
             Title = "Убить крыс в подвале таверны",
             Description = "Хозяин таверны жалуется на нашествие крыс.",
             Reward = 50m,
-            Status = QuestStatus.Completed
+            Status = QuestStatus.Completed,
+            AdventurerId = 1
         },
         new()
         {
@@ -20,7 +21,8 @@ internal static class GuildSeed
             Title = "Найти пропавшую кошку",
             Description = "Кошка пропала три дня назад в районе рынка.",
             Reward = 30m,
-            Status = QuestStatus.Completed
+            Status = QuestStatus.Completed,
+            AdventurerId = 2
         },
         new()
         {
@@ -28,7 +30,8 @@ internal static class GuildSeed
             Title = "Доставить письмо в Восточный форт",
             Description = "Срочное письмо для командира гарнизона.",
             Reward = 80m,
-            Status = QuestStatus.Completed
+            Status = QuestStatus.Completed,
+            AdventurerId = 3
         },
         new()
         {
@@ -36,7 +39,8 @@ internal static class GuildSeed
             Title = "Охрана купеческого каравана",
             Description = "Сопровождение каравана до перевала Серых Камней.",
             Reward = 300m,
-            Status = QuestStatus.Completed
+            Status = QuestStatus.Completed,
+            AdventurerId = 1
         },
         new()
         {
@@ -52,7 +56,8 @@ internal static class GuildSeed
             Title = "Зачистка бандитского лагеря",
             Description = "Банда орудует на дороге к северу от города.",
             Reward = 400m,
-            Status = QuestStatus.InProgress
+            Status = QuestStatus.InProgress,
+            AdventurerId = 2
         },
         new()
         {
@@ -60,7 +65,8 @@ internal static class GuildSeed
             Title = "Поиск пропавшего мага",
             Description = "Маг Ортан не вернулся из экспедиции в Тёмный лес две недели назад.",
             Reward = 500m,
-            Status = QuestStatus.InProgress
+            Status = QuestStatus.InProgress,
+            AdventurerId = 1
         },
         new()
         {
@@ -76,7 +82,8 @@ internal static class GuildSeed
             Title = "Починить мост через реку Грай",
             Description = "Мост обрушился, нужны плотники и охрана.",
             Reward = 200m,
-            Status = QuestStatus.InProgress
+            Status = QuestStatus.InProgress,
+            AdventurerId = 3
         },
         new()
         {
@@ -84,7 +91,8 @@ internal static class GuildSeed
             Title = "Допросить информатора",
             Description = "Информатор скрывается в портовом квартале. Доставить живым.",
             Reward = 350m,
-            Status = QuestStatus.InProgress
+            Status = QuestStatus.InProgress,
+            AdventurerId = 2
         },
         new()
         {
