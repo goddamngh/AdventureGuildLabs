@@ -4,10 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:vm="clr-namespace:AdventurersGuild.ViewModels.Adventurers;assembly=AdventurersGuild.ViewModels"
+             xmlns:converters="clr-namespace:AdventurersGuild.UI.Converters"
              mc:Ignorable="d"
              d:DataContext="{d:DesignInstance vm:AdventurersViewModel}">
 
     <UserControl.Resources>
+        <converters:EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
+        
         <Style x:Key="PageTitle" TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
             <Setter Property="FontSize" Value="16" />
             <Setter Property="FontWeight" Value="SemiBold" />
@@ -23,10 +26,31 @@
             <Setter Property="Margin" Value="0,0,4,0" />
             <Setter Property="Padding" Value="8,4" />
         </Style>
+        
+        <Style x:Key="FilterPanel" TargetType="StackPanel">
+            <Setter Property="Margin" Value="0,0,0,12" />
+        </Style>
+        <Style x:Key="FilterRow" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="Margin" Value="0,0,16,0" />
+        </Style>
+        <Style x:Key="FilterLabel" TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+            <Setter Property="Margin" Value="0,0,4,0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="FilterTextBox" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Width" Value="200" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="FilterComboBox" TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
+            <Setter Property="Width" Value="150" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
     </UserControl.Resources>
 
     <Grid Style="{StaticResource ContentGrid}">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -34,13 +58,35 @@
 
         <TextBlock Grid.Row="0" Text="Авантюристы" Style="{StaticResource PageTitle}" />
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Style="{StaticResource Toolbar}">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Style="{StaticResource FilterPanel}">
+            <StackPanel Style="{StaticResource FilterRow}">
+                <Label Content="Поиск:" Style="{StaticResource FilterLabel}" />
+                <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
+                         Style="{StaticResource FilterTextBox}"
+                         ToolTip="Поиск по имени" />
+            </StackPanel>
+            
+            <StackPanel Style="{StaticResource FilterRow}">
+                <Label Content="Ранг:" Style="{StaticResource FilterLabel}" />
+                <ComboBox ItemsSource="{Binding RankOptions}"
+                          SelectedItem="{Binding SelectedRankOption}"
+                          Style="{StaticResource FilterComboBox}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Value}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Style="{StaticResource Toolbar}">
             <Button Content="Добавить" Command="{Binding AddCommand}" Style="{StaticResource ActionButton}" />
             <Button Content="Редактировать" Command="{Binding EditCommand}" Style="{StaticResource ActionButton}" />
             <Button Content="Удалить" Command="{Binding DeleteCommand}" Style="{StaticResource ActionButton}" />
         </StackPanel>
 
-        <DataGrid Grid.Row="2"
+        <DataGrid Grid.Row="3"
                   ItemsSource="{Binding Adventurers}"
                   SelectedItem="{Binding SelectedAdventurer}"
                   AutoGenerateColumns="False"
