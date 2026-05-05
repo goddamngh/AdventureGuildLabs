@@ -1,5 +1,6 @@
 using AdventurersGuild.Database.Abstract;
 using AdventurersGuild.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AdventurersGuild.Database;
 
@@ -14,7 +15,9 @@ public class QuestRepository : IQuestRepository
     
     public Quest[] Get(QuestFilter filter)
     {
-        var query = _context.Questions.AsQueryable();
+        var query = _context.Questions
+            .Include(q => q.Adventurer)
+            .AsQueryable();
         
         if (!string.IsNullOrWhiteSpace(filter.SearchText))
         {
@@ -26,13 +29,20 @@ public class QuestRepository : IQuestRepository
         {
             query = query.Where(q => q.Status == filter.Status.Value);
         }
+        
+        if (filter.AdventurerId.HasValue)
+        {
+            query = query.Where(q => q.AdventurerId == filter.AdventurerId.Value);
+        }
 
         return query.ToArray();
     }
     
     public Quest? GetById(int id)
     {
-        return _context.Questions.Find(id);
+        return _context.Questions
+            .Include(q => q.Adventurer)
+            .FirstOrDefault(q => q.Id == id);
     }
     
     public void Add(Quest quest)
