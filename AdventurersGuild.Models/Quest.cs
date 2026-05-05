@@ -7,4 +7,6 @@ public class Quest
     public string Description { get; set; } = string.Empty;
     public decimal Reward { get; set; }
     public QuestStatus Status { get; set; }
+    public int? AdventurerId { get; set; }
+    public Adventurer? Adventurer { get; set; }
 }
