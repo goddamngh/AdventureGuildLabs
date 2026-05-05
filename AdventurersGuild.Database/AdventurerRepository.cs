@@ -12,11 +12,21 @@ public class AdventurerRepository : IAdventurerRepository
         _context = context;
     }
 
-    // TODO: реализовать методы интерфейса IAdventurerRepository
-
-    public Adventurer[] GetAll()
+    public Adventurer[] Get(AdventurerFilter filter)
     {
-        return _context.Adventurers.ToArray();
+        var query = _context.Adventurers.AsQueryable();
+        
+        if (!string.IsNullOrWhiteSpace(filter.SearchText))
+        {
+            query = query.Where(a => a.Name.Contains(filter.SearchText));
+        }
+
+        if (filter.Rank.HasValue)
+        {
+            query = query.Where(a => a.Rank == filter.Rank.Value);
+        }
+
+        return query.ToArray();
     }
     
     public Adventurer? GetById(int id)

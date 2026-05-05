@@ -11,12 +11,23 @@ public class QuestRepository : IQuestRepository
     {
         _context = context;
     }
-
-    // TODO: реализовать методы интерфейса IQuestRepository
     
-    public Quest[] GetAll()
+    public Quest[] Get(QuestFilter filter)
     {
-        return _context.Questions.ToArray();
+        var query = _context.Questions.AsQueryable();
+        
+        if (!string.IsNullOrWhiteSpace(filter.SearchText))
+        {
+            query = query.Where(q => q.Title.Contains(filter.SearchText) 
+                                     || q.Description.Contains(filter.SearchText));
+        }
+
+        if (filter.Status.HasValue)
+        {
+            query = query.Where(q => q.Status == filter.Status.Value);
+        }
+
+        return query.ToArray();
     }
     
     public Quest? GetById(int id)
