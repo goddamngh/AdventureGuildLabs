@@ -13,20 +13,55 @@ public class AdventurersViewModel : ViewModelBase
     private readonly MainViewModel _main;
 
     private ObservableCollection<Adventurer> _adventurers = [];
-    private Adventurer? _selectedAdventurer;
-
     public ObservableCollection<Adventurer> Adventurers
     {
         get => _adventurers;
         private set => Set(ref _adventurers, value);
     }
-
+    
+    private Adventurer? _selectedAdventurer;
     public Adventurer? SelectedAdventurer
     {
         get => _selectedAdventurer;
         set => Set(ref _selectedAdventurer, value);
     }
+    
+    private string _searchText = string.Empty;
+    public string SearchText
+    {
+        get => _searchText;
+        set
+        {
+            if (Set(ref _searchText, value))
+            {
+                Load(); // При изменении текста поиска обновляем список
+            }
+        }
+    }
+    
+    // обертки для комбобокса
+    private AdventurerRank? _selectedRank;
+    private readonly FilterOption<AdventurerRank?>[] _rankOptions;
+    
+    
+    private FilterOption<AdventurerRank?> _selectedRankOption;
+    public FilterOption<AdventurerRank?> SelectedRankOption
+    {
+        get => _selectedRankOption;
+        set
+        {
+            if (Set(ref _selectedRankOption, value))
+            {
+                Load(); // При изменении ранга обновляем список
+            }
+        }
+    }
 
+
+    
+
+    
+    public IEnumerable<FilterOption<AdventurerRank?>> RankOptions => _rankOptions;
     public RelayCommand AddCommand { get; }
     public RelayCommand EditCommand { get; }
     public RelayCommand DeleteCommand { get; }
@@ -36,6 +71,19 @@ public class AdventurersViewModel : ViewModelBase
         _repository = repository;
         _main = main;
 
+        _rankOptions = new[]
+        {
+            new FilterOption<AdventurerRank?>(null),  // "Все"
+            new FilterOption<AdventurerRank?>(AdventurerRank.F),
+            new FilterOption<AdventurerRank?>(AdventurerRank.E),
+            new FilterOption<AdventurerRank?>(AdventurerRank.D),
+            new FilterOption<AdventurerRank?>(AdventurerRank.C),
+            new FilterOption<AdventurerRank?>(AdventurerRank.B),
+            new FilterOption<AdventurerRank?>(AdventurerRank.A),
+            new FilterOption<AdventurerRank?>(AdventurerRank.S)
+        };
+        _selectedRankOption = _rankOptions[0];
+        
         AddCommand = new RelayCommand(Add);
         EditCommand = new RelayCommand(Edit, () => SelectedAdventurer is not null);
         DeleteCommand = new RelayCommand(Delete, () => SelectedAdventurer is not null);
@@ -45,30 +93,30 @@ public class AdventurersViewModel : ViewModelBase
 
     public void Load()
     {
-        // TODO: загрузить авантюристов из репозитория
-        var _adventurers = _repository.GetAll();
+        var filter = new AdventurerFilter
+        {
+            SearchText = SearchText,
+            Rank = SelectedRankOption?.Value
+        };
+        
+        var adventurers = _repository.Get(filter);
         Adventurers = new ObservableCollection<Adventurer>(_adventurers);
     }
 
     private async Task Add()
     {
         await _main.OpenAdventurerEdit(null);
-        // Форма закрылась — данные в БД могли измениться, обновляем список
-        // TODO: обновить список
         Load(); 
     }
 
     private async Task Edit()
     {
         await _main.OpenAdventurerEdit(SelectedAdventurer);
-        // Форма закрылась — данные в БД могли измениться, обновляем список
-        // TODO: обновить список
         Load(); 
     }
 
     private void Delete()
     {
-        // TODO: удалить выбранного авантюриста через репозиторий, обновить список
         if (SelectedAdventurer is not null)
         {
             _repository.Delete(SelectedAdventurer.Id);
