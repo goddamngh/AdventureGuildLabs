@@ -9,3 +9,4 @@ C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\Adven
 C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.Models\obj\Debug\net8.0\refint\AdventurersGuild.Models.dll
 C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.Models\obj\Debug\net8.0\AdventurersGuild.Models.pdb
 C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.Models\obj\Debug\net8.0\ref\AdventurersGuild.Models.dll
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.Models\obj\Debug\net8.0\AdventurersGuild.Models.sourcelink.json

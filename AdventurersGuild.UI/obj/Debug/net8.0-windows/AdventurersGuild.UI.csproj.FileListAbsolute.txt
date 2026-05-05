@@ -78,3 +78,4 @@ C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\Adven
 C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.UI\obj\Debug\net8.0-windows\AdventurersGuild.UI.pdb
 C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.UI\obj\Debug\net8.0-windows\AdventurersGuild.UI.genruntimeconfig.cache
 C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.UI\obj\Debug\net8.0-windows\ref\AdventurersGuild.UI.dll
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.UI\obj\Debug\net8.0-windows\AdventurersGuild.UI.sourcelink.json
