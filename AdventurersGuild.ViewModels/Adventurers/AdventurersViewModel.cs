@@ -98,9 +98,9 @@ public class AdventurersViewModel : ViewModelBase
             SearchText = SearchText,
             Rank = SelectedRankOption?.Value
         };
-        
+    
         var adventurers = _repository.Get(filter);
-        Adventurers = new ObservableCollection<Adventurer>(_adventurers);
+        Adventurers = new ObservableCollection<Adventurer>(adventurers);
     }
 
     private async Task Add()
