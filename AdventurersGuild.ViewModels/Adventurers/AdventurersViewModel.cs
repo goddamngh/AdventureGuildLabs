@@ -91,6 +91,7 @@ public class AdventurersViewModel : ViewModelBase
         Load();
     }
 
+    
     public void Load()
     {
         var filter = new AdventurerFilter
