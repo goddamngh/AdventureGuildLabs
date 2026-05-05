@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "RVg2Qr9jmM0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Models\\AdventurersGuild.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\savel\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.26\\microsoft.netcore.app.ref.8.0.26.nupkg.sha512",
+    "C:\\Users\\savel\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.26\\microsoft.windowsdesktop.app.ref.8.0.26.nupkg.sha512",
+    "C:\\Users\\savel\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.26\\microsoft.aspnetcore.app.ref.8.0.26.nupkg.sha512"
+  ],
+  "logs": []
+}

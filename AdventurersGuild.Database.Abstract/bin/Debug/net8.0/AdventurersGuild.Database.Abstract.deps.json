@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "AdventurersGuild.Database.Abstract/1.0.0": {
+        "dependencies": {
+          "AdventurersGuild.Models": "1.0.0"
+        },
+        "runtime": {
+          "AdventurersGuild.Database.Abstract.dll": {}
+        }
+      },
+      "AdventurersGuild.Models/1.0.0": {
+        "runtime": {
+          "AdventurersGuild.Models.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AdventurersGuild.Database.Abstract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AdventurersGuild.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

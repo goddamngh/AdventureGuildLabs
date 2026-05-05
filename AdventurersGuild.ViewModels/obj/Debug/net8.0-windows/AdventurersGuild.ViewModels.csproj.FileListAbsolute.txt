@@ -1,0 +1,17 @@
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\bin\Debug\net8.0-windows\AdventurersGuild.ViewModels.deps.json
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\bin\Debug\net8.0-windows\AdventurersGuild.ViewModels.dll
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\bin\Debug\net8.0-windows\AdventurersGuild.ViewModels.pdb
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\bin\Debug\net8.0-windows\AdventurersGuild.Database.Abstract.dll
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\bin\Debug\net8.0-windows\AdventurersGuild.Models.dll
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\bin\Debug\net8.0-windows\AdventurersGuild.Database.Abstract.pdb
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\bin\Debug\net8.0-windows\AdventurersGuild.Models.pdb
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\obj\Debug\net8.0-windows\AdventurersGuild.ViewModels.csproj.AssemblyReference.cache
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\obj\Debug\net8.0-windows\AdventurersGuild.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\obj\Debug\net8.0-windows\AdventurersGuild.ViewModels.AssemblyInfoInputs.cache
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\obj\Debug\net8.0-windows\AdventurersGuild.ViewModels.AssemblyInfo.cs
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\obj\Debug\net8.0-windows\AdventurersGuild.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\obj\Debug\net8.0-windows\Adventur.E1E1A21E.Up2Date
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\obj\Debug\net8.0-windows\AdventurersGuild.ViewModels.dll
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\obj\Debug\net8.0-windows\refint\AdventurersGuild.ViewModels.dll
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\obj\Debug\net8.0-windows\AdventurersGuild.ViewModels.pdb
+C:\Users\savel\oaip\3 курс\рпм\6 семестр\11, 12, 13 лабы\AdventurersGuild.ViewModels\obj\Debug\net8.0-windows\ref\AdventurersGuild.ViewModels.dll

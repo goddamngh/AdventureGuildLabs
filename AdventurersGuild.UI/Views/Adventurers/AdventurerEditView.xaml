@@ -1,0 +1,51 @@
+<UserControl x:Class="AdventurersGuild.UI.Views.Adventurers.AdventurerEditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:AdventurersGuild.ViewModels.Adventurers;assembly=AdventurersGuild.ViewModels"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance vm:AdventurerEditViewModel}">
+
+    <UserControl.Resources>
+        <Style x:Key="FormTitle" TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Margin" Value="0,0,0,8" />
+        </Style>
+        <Style x:Key="FormPanel" TargetType="StackPanel">
+            <Setter Property="Margin" Value="8" />
+        </Style>
+        <Style x:Key="FieldLabel" TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+            <Setter Property="Margin" Value="0,8,0,2" />
+        </Style>
+        <Style x:Key="FormButtons" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="Margin" Value="0,16,0,0" />
+        </Style>
+        <Style x:Key="FormButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Margin" Value="0,0,4,0" />
+            <Setter Property="Padding" Value="16,4" />
+        </Style>
+    </UserControl.Resources>
+
+    <StackPanel Style="{StaticResource FormPanel}">
+        <TextBlock Text="{Binding FormTitle}" Style="{StaticResource FormTitle}" />
+
+        <Label Content="Имя" Style="{StaticResource FieldLabel}" />
+        <!-- TODO: привязать к свойству Name. Используйте UpdateSourceTrigger=PropertyChanged,
+             чтобы значение обновлялось при каждом нажатии клавиши, а не при потере фокуса -->
+        <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Label Content="Ранг" Style="{StaticResource FieldLabel}" />
+        <ComboBox ItemsSource="{Binding Ranks}" SelectedItem="{Binding Rank}"/> <!-- TODO: привязать SelectedItem к свойству Rank -->
+
+        <Label Content="Активен" Style="{StaticResource FieldLabel}" />
+        <CheckBox IsChecked="{Binding IsActive}"/> <!-- TODO: привязать IsChecked к свойству IsActive -->
+
+        <StackPanel Style="{StaticResource FormButtons}">
+            <Button Content="Сохранить" Command="{Binding SaveCommand}" Style="{StaticResource FormButton}" />
+            <Button Content="Отмена" Command="{Binding CancelCommand}" Style="{StaticResource FormButton}" />
+        </StackPanel>
+    </StackPanel>
+</UserControl>

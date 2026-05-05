@@ -1,0 +1,63 @@
+<ui:FluentWindow x:Class="AdventurersGuild.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:quests="clr-namespace:AdventurersGuild.ViewModels.Quests;assembly=AdventurersGuild.ViewModels"
+        xmlns:adventurers="clr-namespace:AdventurersGuild.ViewModels.Adventurers;assembly=AdventurersGuild.ViewModels"
+        xmlns:questViews="clr-namespace:AdventurersGuild.UI.Views.Quests"
+        xmlns:adventurerViews="clr-namespace:AdventurersGuild.UI.Views.Adventurers"
+        mc:Ignorable="d"
+        Title="Да благословят программные модули этот прекрасный мир!"
+        Height="600"
+        Width="900">
+
+    <Window.Resources>
+        <Style x:Key="NavPanel" TargetType="StackPanel">
+            <Setter Property="Margin" Value="8" />
+        </Style>
+        <Style x:Key="NavButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Margin" Value="0,0,0,4" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+        </Style>
+
+        <DataTemplate DataType="{x:Type quests:QuestsViewModel}">
+            <questViews:QuestsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type quests:QuestEditViewModel}">
+            <questViews:QuestEditView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type adventurers:AdventurersViewModel}">
+            <adventurerViews:AdventurersView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type adventurers:AdventurerEditViewModel}">
+            <adventurerViews:AdventurerEditView />
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ui:TitleBar Title="Да благословят программные модули этот прекрасный мир!"
+                     Grid.Row="0" Grid.ColumnSpan="2" />
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Style="{StaticResource NavPanel}">
+            <Button Content="Квесты"
+                    Command="{Binding ShowQuestsCommand}"
+                    Style="{StaticResource NavButton}" />
+            <Button Content="Авантюристы"
+                    Command="{Binding ShowAdventurersCommand}"
+                    Style="{StaticResource NavButton}" />
+        </StackPanel>
+
+        <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding CurrentView}" />
+    </Grid>
+</ui:FluentWindow>

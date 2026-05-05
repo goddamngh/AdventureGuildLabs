@@ -1,0 +1,439 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.UI\\AdventurersGuild.UI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Database.Abstract\\AdventurersGuild.Database.Abstract.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Database.Abstract\\AdventurersGuild.Database.Abstract.csproj",
+        "projectName": "AdventurersGuild.Database.Abstract",
+        "projectPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Database.Abstract\\AdventurersGuild.Database.Abstract.csproj",
+        "packagesPath": "C:\\Users\\savel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Database.Abstract\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\savel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Models\\AdventurersGuild.Models.csproj": {
+                "projectPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Models\\AdventurersGuild.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.26, 8.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.26, 8.0.26]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.26, 8.0.26]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Database\\AdventurersGuild.Database.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Database\\AdventurersGuild.Database.csproj",
+        "projectName": "AdventurersGuild.Database",
+        "projectPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Database\\AdventurersGuild.Database.csproj",
+        "packagesPath": "C:\\Users\\savel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Database\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\savel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Database.Abstract\\AdventurersGuild.Database.Abstract.csproj": {
+                "projectPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Database.Abstract\\AdventurersGuild.Database.Abstract.csproj"
+              },
+              "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Models\\AdventurersGuild.Models.csproj": {
+                "projectPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Models\\AdventurersGuild.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.*, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.*, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.26, 8.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.26, 8.0.26]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.26, 8.0.26]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Models\\AdventurersGuild.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Models\\AdventurersGuild.Models.csproj",
+        "projectName": "AdventurersGuild.Models",
+        "projectPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Models\\AdventurersGuild.Models.csproj",
+        "packagesPath": "C:\\Users\\savel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\savel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.26, 8.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.26, 8.0.26]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.26, 8.0.26]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.UI\\AdventurersGuild.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.UI\\AdventurersGuild.UI.csproj",
+        "projectName": "AdventurersGuild.UI",
+        "projectPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.UI\\AdventurersGuild.UI.csproj",
+        "packagesPath": "C:\\Users\\savel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.UI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\savel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Database\\AdventurersGuild.Database.csproj": {
+                "projectPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Database\\AdventurersGuild.Database.csproj"
+              },
+              "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Models\\AdventurersGuild.Models.csproj": {
+                "projectPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Models\\AdventurersGuild.Models.csproj"
+              },
+              "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.ViewModels\\AdventurersGuild.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.ViewModels\\AdventurersGuild.ViewModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.200"
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "WPF-UI": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.26, 8.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.26, 8.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.26, 8.0.26]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.26, 8.0.26]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.ViewModels\\AdventurersGuild.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.ViewModels\\AdventurersGuild.ViewModels.csproj",
+        "projectName": "AdventurersGuild.ViewModels",
+        "projectPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.ViewModels\\AdventurersGuild.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\savel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.ViewModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\savel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Database.Abstract\\AdventurersGuild.Database.Abstract.csproj": {
+                "projectPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Database.Abstract\\AdventurersGuild.Database.Abstract.csproj"
+              },
+              "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Models\\AdventurersGuild.Models.csproj": {
+                "projectPath": "C:\\Users\\savel\\oaip\\3 курс\\рпм\\6 семестр\\11, 12, 13 лабы\\AdventurersGuild.Models\\AdventurersGuild.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.200"
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.26, 8.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.26, 8.0.26]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.26, 8.0.26]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
