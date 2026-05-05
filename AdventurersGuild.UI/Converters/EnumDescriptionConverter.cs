@@ -9,6 +9,11 @@ public class EnumDescriptionConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
+        if (value is null)
+        {
+            return "Все";
+        }
+        
         if (value is not Enum enumValue)
         {
             return value;
