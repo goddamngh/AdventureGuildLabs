@@ -10,6 +10,7 @@ public class QuestEditViewModel : ViewModelBase
     private readonly IAdventurerRepository _adventurerRepository;
     private readonly Quest? _quest;
     private readonly Completion _completion = new();
+    private FilterOption<Adventurer?>[] _adventurerOptions = []; //список опций
     
     private string _title =  string.Empty;
     public string Title
@@ -80,26 +81,15 @@ public class QuestEditViewModel : ViewModelBase
     private void LoadAdventurerOptions()
     {
         var adventurers = _adventurerRepository.Get(new AdventurerFilter());
-        
+    
         var options = new List<FilterOption<Adventurer?>>
         {
             new FilterOption<Adventurer?>(null)
         };
-        
+    
         options.AddRange(adventurers.Select(a => new FilterOption<Adventurer?>(a)));
-        
-        AdventurerOptions = options;
-        
-        // Устанавливаем выбранный пункт
-        if (_quest?.AdventurerId.HasValue == true)
-        {
-            var selectedAdventurer = adventurers.FirstOrDefault(a => a.Id == _quest.AdventurerId);
-            SelectedAdventurerOption = options.FirstOrDefault(o => o.Value?.Id == selectedAdventurer?.Id);
-        }
-        else
-        {
-            SelectedAdventurerOption = options.First();  // "Не назначен"
-        }
+    
+        _adventurerOptions = options.ToArray();
     }
     
     private void CopyFrom(Quest quest)
@@ -108,6 +98,7 @@ public class QuestEditViewModel : ViewModelBase
         Description = quest.Description;
         Reward = quest.Reward;
         Status = quest.Status;
+        SelectedAdventurerOption = _adventurerOptions.FirstOrDefault(o => o.Value?.Id == quest.AdventurerId);
     }
 
     private void CopyTo(Quest quest)
@@ -118,6 +109,7 @@ public class QuestEditViewModel : ViewModelBase
         quest.Status = Status;
         quest.AdventurerId = SelectedAdventurerOption?.Value?.Id;
     }
+    
 
     private bool Validate()
     {

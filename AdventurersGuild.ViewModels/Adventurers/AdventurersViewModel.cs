@@ -34,7 +34,7 @@ public class AdventurersViewModel : ViewModelBase
         {
             if (Set(ref _searchText, value))
             {
-                Load(); 
+                Load();
             }
         }
     }
